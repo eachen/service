@@ -23,6 +23,9 @@ class service(threading.Thread):
             t.start()
     def sendMsg(self,skt):
         skt.send("hell,client")
+        while True:
+            print skt.recv(1024)
+            
     def run(self):
         self.startService()
         
